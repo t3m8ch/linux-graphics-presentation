@@ -1,7 +1,7 @@
 format filename:
     #!/usr/bin/env python3
     import re
-    with open("{{filename}}") as f:
+    with open("{{filename}}", "r", encoding="UTF-8") as f:
         m = re.search("^# (.*)", f.read())
         title = "Презентация" if m is None else m.group(1)
     with open("template.html") as f:
